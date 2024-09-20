@@ -75,6 +75,7 @@ function App() {
             <th>Name</th>
             <th>Location</th>
             <th>Created</th>
+            <th>|</th>
             <th>Updated</th>
             <th>Is Admin</th>
             <th>Delete</th>
@@ -90,10 +91,13 @@ function App() {
                 <p>{user.location}</p>
               </td>
               <td>
-                <p>{user.createdAt}</p>
+                <p>{new Date(user.createdAt).toDateString()}</p>
               </td>
               <td>
-                <p>{user.updatedAt}</p>
+                <p> </p>
+              </td>
+              <td>
+                <p>{new Date(user.updatedAt).toDateString()}</p>
               </td>
               <td>
                 <input
