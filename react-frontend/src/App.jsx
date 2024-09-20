@@ -46,7 +46,7 @@ function App() {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ name: e.target.name.value, isAdmin: e.target.isAdmin.checked  }),
+      body: JSON.stringify({ name: e.target.name.value, isAdmin: e.target.isAdmin.checked, location: e.target.location.value  }),
     });
     const newUser = await response.json();
 
@@ -56,20 +56,26 @@ function App() {
 
   return (
     <>
-      <h1>New User</h1>
+      <h1>8th Dimension Labs</h1>
+      <h1>Create New User</h1>
       <form onSubmit={createUser}>
         <label htmlFor="name">Name </label>
         <input type="text" name="name" id="name" />
+        <label htmlFor="location"> Location </label>
+        <input type="text" name="loaction" id="location" />
         <label htmlFor="isAdmin"> Is Admin </label>
         <input type="checkbox" name="isAdmin"/>
         <input type="submit" />
       </form>
       <br></br>
-      <h1>Users</h1>
+      <h1>Existing Users</h1>
       <table>
         <thead>
           <tr>
             <th>Name</th>
+            <th>Location</th>
+            <th>Created</th>
+            <th>Updated</th>
             <th>Is Admin</th>
             <th>Delete</th>
           </tr>
@@ -79,6 +85,15 @@ function App() {
             <tr key={user.id}>
               <td>
                 <p>{user.name}</p>
+              </td>
+              <td>
+                <p>{user.location}</p>
+              </td>
+              <td>
+                <p>{user.createdAt}</p>
+              </td>
+              <td>
+                <p>{user.updatedAt}</p>
               </td>
               <td>
                 <input
