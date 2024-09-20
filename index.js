@@ -25,17 +25,19 @@ class User extends Model {}
 User.init({
     name: DataTypes.STRING,
     isAdmin: DataTypes.BOOLEAN,
+    location: DataTypes.STRING,
 }, { sequelize, modelName: 'user' });
 
 // Sync models with database
 sequelize.sync();
 
 const users = [
-    { name: "John Doe",  isAdmin: false },
-    { name: "Jane Smith", isAdmin: false },
-    { name: "Mike Johnson", isAdmin: false  },
-    { name: "Sarah Williams", isAdmin: false  },
-    { name: "David Brown", isAdmin: false  }
+    { name: "John ManyJohns",  isAdmin: false, location: "Planet 10" },
+    { name: "John Smallberries", isAdmin: false, location: "Planet 10" },
+    { name: "John YahYah", isAdmin: false, location: "Planet 10" },
+    { name: "John O'Conner", isAdmin: false, location: "Planet 10" },
+    { name: "Emilo Lizardo", isAdmin: false, location: "Trenton" },
+    { name: "Buckaroo Bonzai", isAdmin: false, location: "8th Dimension" },
 ];
 
 app.get('/api/seeds', async (req, res) => {
