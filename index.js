@@ -55,11 +55,10 @@ app.get('/api/users/:id', async (req, res) => {
     res.json(user);
 });
 
-app.post('/api/users', async (req, res) => {
-    const { name, isAdmin } = req.body;
-    const user = await User.create({ name, isAdmin});
+app.post("/api/users", async (req, res) => {
+    const user = await User.create(req.body);
     res.json(user);
-});
+  });
 
 app.put('/api/users/:id', async (req, res) => {
     const { name, isAdmin } = req.body;

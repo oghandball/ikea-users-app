@@ -46,7 +46,7 @@ function App() {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ name: e.target.name.value, isAdmin: e.target.isAdmin.checked, location: e.target.location.value  }),
+      body: JSON.stringify({ name: e.target.name.value, location: e.target.location.value, isAdmin: e.target.isAdmin.checked }),
     });
     const newUser = await response.json();
 
@@ -62,7 +62,7 @@ function App() {
         <label htmlFor="name">Name </label>
         <input type="text" name="name" id="name" />
         <label htmlFor="location"> Location </label>
-        <input type="text" name="loaction" id="location" />
+        <input type="text" name="location" id="location" />
         <label htmlFor="isAdmin"> Is Admin </label>
         <input type="checkbox" name="isAdmin"/>
         <input type="submit" />
