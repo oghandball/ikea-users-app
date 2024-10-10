@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-//import "./App.css";
+import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const hostUrl = "http://localhost:8080/";
+  const hostUrl = import.meta.env.PROD
+    ? window.localStorage.href 
+    : "http://localhost:8080/";
 
   const fetchUsers = async () => {
     const response = await fetch(`${hostUrl}api/users`);
