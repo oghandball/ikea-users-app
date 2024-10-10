@@ -16,7 +16,7 @@ RUN npm install
 RUN npm run build
 # Build the React App
 
-EXPOSE 5000
+EXPOSE 5173
 # The port we want the container to open (i.e. run on)
 
 CMD [ "npm", "run", "dev" ]
