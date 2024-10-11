@@ -56,7 +56,7 @@ function App() {
 
   return (
     <>
-      <h1>8th Dimension Labs</h1>
+      <h1>8th Dimension Labs User Creation</h1>
       <h1>Create New User</h1>
       <form onSubmit={createUser}>
         <label htmlFor="name">Name </label>
